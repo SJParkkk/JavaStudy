@@ -1,6 +1,7 @@
 package BlackJackDemo_1;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class CardDeck {
@@ -16,7 +17,7 @@ public class CardDeck {
     }
 
     private List<Card> generateCard(){
-        cards = new ArrayList<>();
+        cards = new LinkedList<>();
         //PATTERNS별로 13개의 카드가 있음,
         for (String pattern : PATTERNS) {
             for (int i = 1; i < CARD_COUNT; i++) {
@@ -44,6 +45,18 @@ public class CardDeck {
             return  "K";
         }
         return String.valueOf(number);
+    }
+
+    public Card draw(){
+        Card selectedCard = getRandomCard();
+        cards.remove(selectedCard);
+        return selectedCard;
+    }
+    private Card getRandomCard(){
+        // 이 클래스에서만 활용되는 함수 입니다. -> private
+        int size = cards.size();
+        int select = (int)(Math.random()*size);
+        return cards.get(select);
     }
 
     @Override
