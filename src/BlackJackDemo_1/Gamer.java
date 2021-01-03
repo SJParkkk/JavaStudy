@@ -18,7 +18,7 @@ public class Gamer {
         this.showCards();
     }
     public List<Card> openCard(){
-        return null;
+        return this.cards;
     }
 
     public void showCards(){

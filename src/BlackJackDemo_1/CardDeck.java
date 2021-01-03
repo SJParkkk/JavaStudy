@@ -21,30 +21,13 @@ public class CardDeck {
         //PATTERNS별로 13개의 카드가 있음,
         for (String pattern : PATTERNS) {
             for (int i = 1; i < CARD_COUNT; i++) {
-                Card card = new Card();
                 // 왜 널 안하면 에러남?
                 //String denomination;
-                String denomination = null;
-                denomination = numberToDenomination(i);
-                card.setPattern(pattern);
-                card.setDenomination(denomination);
+                Card card = new Card(pattern,i);
                 cards.add(card);
             }
         }
     return cards;
-    }
-
-    private String numberToDenomination(int number) {
-        if(number == 1){
-            return "A";
-        }else if(number == 11){
-            return "J";
-        }else if(number == 12){
-            return "Q";
-        }else if(number == 13){
-            return  "K";
-        }
-        return String.valueOf(number);
     }
 
     public Card draw(){
