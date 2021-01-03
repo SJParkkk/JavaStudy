@@ -8,7 +8,7 @@ import java.util.List;
     - 뽑은 카드를 소유한다.
     - 카드를 오픈한다.
 */
-public class Gamer {
+public class Gamer implements Player{
     private List<Card> cards;
     public Gamer(){
         cards = new ArrayList<>();
