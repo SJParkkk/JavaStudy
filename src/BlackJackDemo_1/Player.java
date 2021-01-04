@@ -6,4 +6,7 @@ public interface Player {
     void receiveCard(Card card);
     void showCards();
     List<Card> openCard();
+    void turnOn();
+    void turnOff();
+    boolean isTurn();
 }

@@ -21,6 +21,21 @@ public class Gamer implements Player{
         return this.cards;
     }
 
+    @Override
+    public void turnOn() {
+
+    }
+
+    @Override
+    public void turnOff() {
+
+    }
+
+    @Override
+    public boolean isTurn() {
+        return false;
+    }
+
     public void showCards(){
         StringBuilder sb = new StringBuilder();
         sb.append("현재보유한 카드는\n");

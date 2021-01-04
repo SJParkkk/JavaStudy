@@ -55,4 +55,19 @@ public class Dealer implements Player{
     public List<Card> openCard(){
         return null;
     }
+
+    @Override
+    public void turnOn() {
+
+    }
+
+    @Override
+    public void turnOff() {
+
+    }
+
+    @Override
+    public boolean isTurn() {
+        return false;
+    }
 }
