@@ -9,9 +9,11 @@ import java.util.List;
     - 카드를 오픈한다.
 */
 public class Gamer implements Player{
+    private final String name;
     private List<Card> cards;
-    public Gamer(){
+    public Gamer(String name){
         cards = new ArrayList<>();
+        this.name = name;
     }
     public void receiveCard(Card card){
         this.cards.add(card);
@@ -36,9 +38,14 @@ public class Gamer implements Player{
         return false;
     }
 
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
     public void showCards(){
         StringBuilder sb = new StringBuilder();
-        sb.append("현재보유한 카드는\n");
+        sb.append( this.name +"보유한 카드는\n");
         for (Card card : cards) {
             sb.append(card.toString());
             sb.append("\n");

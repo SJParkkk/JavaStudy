@@ -9,4 +9,5 @@ public interface Player {
     void turnOn();
     void turnOff();
     boolean isTurn();
+    String getName();
 }

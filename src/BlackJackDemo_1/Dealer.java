@@ -13,6 +13,7 @@ import java.util.List;
 
 
 public class Dealer implements Player{
+    private final String NAME = "딜러";
     private ArrayList<Card> cards;
     private static final int CAN_RECEIVE_POINT = 16;
     public Dealer(){
@@ -31,7 +32,7 @@ public class Dealer implements Player{
     @Override
     public void showCards() {
         StringBuilder sb = new StringBuilder();
-        sb.append("현재보유한 카드는");
+        sb.append(NAME+ "이 보유한 카드는 \n");
         for (Card card : cards) {
             sb.append(card.toString());
             sb.append("\n");
@@ -69,5 +70,10 @@ public class Dealer implements Player{
     @Override
     public boolean isTurn() {
         return false;
+    }
+
+    @Override
+    public String getName() {
+        return NAME;
     }
 }
