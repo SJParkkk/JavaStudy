@@ -1,6 +1,5 @@
 package BlackJackDemo_1;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 /*
@@ -47,14 +46,14 @@ public class Dealer implements Player{
 
     private int getPoint(){
         int sumPoint=0;
-        for (Card card : cards) {
-            sumPoint += card.getPoint();
+        for (Card.Denomination denomination : Card.Denomination.values()) {
+            sumPoint += denomination.getPoint();
         }
         return sumPoint;
     }
 
     public List<Card> openCard(){
-        return null;
+        return this.cards;
     }
 
     @Override

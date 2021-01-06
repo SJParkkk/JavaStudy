@@ -30,8 +30,8 @@ public class Rule {
     }
     private int getPointSum(List<Card> cards){
         int sum = 0;
-        for (Card card : cards) {
-            sum += card.getPoint();
+        for (Card.Denomination denomination : Card.Denomination.values()) {
+            sum += denomination.getPoint();
         }
       return sum;
     }

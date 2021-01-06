@@ -2,35 +2,25 @@ package BlackJackDemo_1;
 
 public class Card {
     //private 유무 차이점?
-    String pattern;
-    String denomination;
-    int point;
-    public Card(String pattern, int index){
+    private Pattern pattern;
+    private Denomination denomination;
+    public Card(Pattern pattern, Denomination denomination){
         this.pattern = pattern;
-        this.denomination = this.numberToDenomination(index);
-        this.point = this.numberToPoint(index);
+        this.denomination = denomination;
     }
-    public String getPattern() {
+    public Pattern getPattern() {
         return pattern;
     }
 
-    public int getPoint() {
-        return point;
-    }
-
-    public void setPoint(int point) {
-        this.point = point;
-    }
-
-    public String getDenomination() {
+    public Denomination getDenomination() {
         return denomination;
     }
 
-    public void setDenomination(String denomination) {
+    public void setDenomination(Denomination denomination) {
         this.denomination = denomination;
     }
 
-    public void setPattern(String pattern) {
+    public void setPattern(Pattern pattern) {
         this.pattern = pattern;
     }
 
@@ -42,6 +32,7 @@ public class Card {
     }
 
     private String numberToDenomination(int number) {
+
         if(number == 1){
             return "A";
         }else if(number == 11){
@@ -52,6 +43,50 @@ public class Card {
             return  "K";
         }
         return String.valueOf(number);
+    }
+
+    public enum Denomination{
+        ACE("A",1),
+        TWO("2",2),
+        THREE("3",3),
+        FOUR("4",4),
+        FIVE("5",5),
+        SIX("6",6),
+        SEVEN("7",7),
+        EIGHT("8",8),
+        NINE("9",9),
+        TEN("10",10),
+        JACK("J",10),
+        QUEEN("Q",10),
+        KING("K",10);
+
+        private String mark;
+        private int point;
+
+        Denomination(){
+        }
+
+        Denomination(String mark, int point){
+            this.mark = mark;
+            this.point = point;
+        }
+        public int getPoint(){
+            return point;
+        }
+
+    }
+    public enum Pattern{
+        SPADE("spade"),
+        HEART("heart"),
+        DIAMOND("diamond"),
+        ClUB("club");
+
+        private String value;
+
+        Pattern(){}
+        Pattern(String value){
+            this.value = value;
+        }
     }
 
     @Override
