@@ -1,12 +1,10 @@
 package BlackJackDemo_1;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Stack;
 
 public class CardDeck {
-    private List<Card> cards;
-    private static final int CARD_COUNT = 13;
-    public List<Card> getCard(){
+    private static Stack<Card> cards;
+    public static Stack<Card> getCard(){
         return cards;
     }
 
@@ -14,8 +12,8 @@ public class CardDeck {
         cards = this.generateCard();
     }
 
-    private List<Card> generateCard(){
-        cards = new LinkedList<>();
+    private Stack<Card> generateCard(){
+        cards = new Stack<>();
         //PATTERNS별로 13개의 카드가 있음,
         for (Card.Pattern pattern : Card.Pattern.values()) {
             for (Card.Denomination denomination : Card.Denomination.values()) {
@@ -29,9 +27,7 @@ public class CardDeck {
     }
 
     public Card draw(){
-        Card selectedCard = getRandomCard();
-        cards.remove(selectedCard);
-        return selectedCard;
+        return cards.pop();
     }
     private Card getRandomCard(){
         // 이 클래스에서만 활용되는 함수 입니다. -> private

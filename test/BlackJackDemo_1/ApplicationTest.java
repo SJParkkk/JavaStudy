@@ -1,17 +1,20 @@
 package BlackJackDemo_1;
 
-import org.junit.Assert;
-import org.junit.Before;
+
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.is;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 public class ApplicationTest {
     private CardDeck cardDeck;
     private List<Card> cards;
-    @Before
+
+    @BeforeEach
     public void setup(){
         cardDeck = new CardDeck();
         cards = CardDeck.getCard();
@@ -21,13 +24,15 @@ public class ApplicationTest {
     public void test_카드댁생성(){
         CardDeck cardDeck = new CardDeck();
         List<Card> cards = cardDeck.getCard();
-        Assert.assertThat(cards.get(0).getPattern(), is(Card.Pattern.SPADE));
-        Assert.assertThat(cards.get(13).getPattern(), is(Card.Pattern.HEART));
+        assertThat(cards.get(0).getPattern()).isEqualTo(Card.Pattern.SPADE);
+        assertThat(cards.get(13).getPattern()).isEqualTo(Card.Pattern.HEART);
     }
     @Test
     public void test_카드끗수비교(){
-        Assert.assertThat(cards.get(0).getDenomination(), is(Card.Denomination.ACE));
-        Assert.assertThat(cards.get(0).getDenomination().getPoint(), is(1));
+        cardDeck = new CardDeck();
+        cards = CardDeck.getCard();
+        assertThat(cards.get(0).getDenomination()).isEqualTo(Card.Denomination.ACE);
+        assertThat(cards.get(0).getDenomination().getPoint()).isEqualTo(1);
     }
 
 }
