@@ -12,7 +12,6 @@ public class Example1 {
         for (int i = 0; i < objArr.length; i++) {
             set.add(objArr[i]);
         }
-
         Iterator it = set.iterator();
         System.out.println(it);
         while(it.hasNext()){
