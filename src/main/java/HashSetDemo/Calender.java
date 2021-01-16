@@ -9,23 +9,12 @@ import java.util.HashMap;
 * */
 //todo 1월 달만 먼저 만들어보기
 // 각 달별로 첫번째 월요일 구해서 HashSet저장
+// 1일 ,2일, 3일 , 4일, 5일 달 별로 월요일이 다르겟지? -> 이걸 어떻게 바꿀지가
 public class Calender {
     public enum Weekday{
         MON, TUE, WED, THR, FRI, SAT, SUN
     }
-    HashMap MonOfMonth = new HashMap();
-        MonOfMonth.put(1,5);
-        MonOfMonth.put(2,3);
-        MonOfMonth.put(3,3);
-        MonOfMonth.put(4,1);
-        MonOfMonth.put(5,3);
-        MonOfMonth.put(6,5);
-        MonOfMonth.put(7,4);
-        MonOfMonth.put(8,2);
-        MonOfMonth.put(9,0);
-        MonOfMonth.put(10,5);
-        MonOfMonth.put(11,4);
-        MonOfMonth.put(12,3);
+
 
     public Weekday JanuarySolution (int a, int b){
         Weekday Day = null;
@@ -67,13 +56,51 @@ public class Calender {
         }
         return Day;
     }
+    public Weekday useDate(int a, int b){
+        Weekday Day = null;
+        switch(b%7){
+            case 0: Day = Weekday.FRI;
+                break;
+            case 1: Day = Weekday.SAT;
+                break;
+            case 2: Day = Weekday.SUN;
+                break;
+            case 3: Day = Weekday.MON;
+                break;
+            case 4: Day = Weekday.TUE;
+                break;
+            case 5: Day = Weekday.WED;
+                break;
+            case 6: Day = Weekday.THR;
+                break;
+        }
+        return Day;
+
+    }
+
+
 
 
     public static void main(String[] args) {
         Calender date = new Calender();
+        HashMap MonOfMonth = new HashMap();
+        MonOfMonth.put(1, 5);
+        MonOfMonth.put(2, 3);
+        MonOfMonth.put(3, 3);
+        MonOfMonth.put(4, 1);
+        MonOfMonth.put(5, 3);
+        MonOfMonth.put(6, 5);
+        MonOfMonth.put(7, 4);
+        MonOfMonth.put(8, 2);
+        MonOfMonth.put(9, 0);
+        MonOfMonth.put(10, 5);
+        MonOfMonth.put(11, 4);
+        MonOfMonth.put(12, 3);
+    }
+    }
         //        Weekday answer = date.JanuarySolution(1,24);
 //        Weekday answer2 = date.FebuarySolution(2,19);
 //        System.out.println(answer);
 //        System.out.println(answer2);
 //    }
-}
+
