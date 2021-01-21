@@ -1,5 +1,7 @@
 package HashSetDemo;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.HashMap;
 
 /*
@@ -7,95 +9,38 @@ import java.util.HashMap;
     solution을 완성하세요. 요일의 이름은 일요일부터 토요일까지 각각 SUN,MON,TUE,WED,THU,FRI,SAT
     입니다. 예를 들어 a=5, b=24라면 5월 24일은 화요일이므로 문자열 TUE를 반환하세요.
 * */
-//todo 1월 달만 먼저 만들어보기
-// 각 달별로 첫번째 월요일 구해서 HashSet저장
 // 1일 ,2일, 3일 , 4일, 5일 달 별로 월요일이 다르겟지? -> 이걸 어떻게 바꿀지가
 public class Calender {
+    public static HashMap<String,String> map = new HashMap<>();
+
+    public Calender() {
+        map.put("a","c");
+    }
+
     public enum Weekday{
         MON, TUE, WED, THR, FRI, SAT, SUN
     }
 
 
-    public Weekday JanuarySolution (int a, int b){
-        Weekday Day = null;
-        switch ((a+b) % 7){
-            case 0: Day = Weekday.WED;
-                break;
-            case 1: Day = Weekday.THR;
-                    break;
-            case 2: Day = Weekday.FRI;
-                break;
-            case 3: Day = Weekday.SAT;
-                break;
-            case 4: Day = Weekday.SUN;
-                break;
-            case 5: Day = Weekday.MON;
-                break;
-            case 6: Day = Weekday.TUE;
-                break;
-        }
-        return Day;
-    }
-    public Weekday FebuarySolution(int a, int b){
-        Weekday Day = null;
-        switch ((a+b) % 7){
-            case 0: Day = Weekday.FRI;
-                break;
-            case 1: Day = Weekday.SAT;
-                break;
-            case 2: Day = Weekday.SUN;
-                break;
-            case 3: Day = Weekday.MON;
-                break;
-            case 4: Day = Weekday.TUE;
-                break;
-            case 5: Day = Weekday.WED;
-                break;
-            case 6: Day = Weekday.THR;
-                break;
-        }
-        return Day;
-    }
-    public Weekday useDate(int a, int b){
-        Weekday Day = null;
-        switch(b%7){
-            case 0: Day = Weekday.FRI;
-                break;
-            case 1: Day = Weekday.SAT;
-                break;
-            case 2: Day = Weekday.SUN;
-                break;
-            case 3: Day = Weekday.MON;
-                break;
-            case 4: Day = Weekday.TUE;
-                break;
-            case 5: Day = Weekday.WED;
-                break;
-            case 6: Day = Weekday.THR;
-                break;
-        }
-        return Day;
-
-    }
+    public static String JanuarySolution (int a, int b) {
+        int [] intlist ={1,2,3};
 
 
+        DayOfWeek dayOfWeek = LocalDate.of(2016, a, b).getDayOfWeek();
+        String name = dayOfWeek.name();
+        System.out.println(name);
+        return name;
+    }
 
 
     public static void main(String[] args) {
-        Calender date = new Calender();
-        HashMap MonOfMonth = new HashMap();
-        MonOfMonth.put(1, 5);
-        MonOfMonth.put(2, 3);
-        MonOfMonth.put(3, 3);
-        MonOfMonth.put(4, 1);
-        MonOfMonth.put(5, 3);
-        MonOfMonth.put(6, 5);
-        MonOfMonth.put(7, 4);
-        MonOfMonth.put(8, 2);
-        MonOfMonth.put(9, 0);
-        MonOfMonth.put(10, 5);
-        MonOfMonth.put(11, 4);
-        MonOfMonth.put(12, 3);
+//        InputStream
+//        try( Scanner scanner =  new Scanner(System.in)) {
+//        }catch (Exception e){
+//
+//
+//        }
+
     }
     }
         //        Weekday answer = date.JanuarySolution(1,24);
