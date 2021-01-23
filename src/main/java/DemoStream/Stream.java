@@ -13,7 +13,7 @@ public class Stream {
         System.out.println(arrlist);
 
         String[] arr2= {"a","b","c","d","e"};
-        List<String> arr2list = Arrays.stream(arr2).map(String::new).collect(Collectors.toList());
+        List<String> arr2list = Arrays.stream(arr2).collect(Collectors.toList());
 //        List<String> arr2list = Arrays.stream(arr2)
 //                .map(s -> s.toUpperCase(Locale.ROOT))
 //                .toArray(String::);
