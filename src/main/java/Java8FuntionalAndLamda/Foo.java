@@ -1,39 +1,24 @@
 package Java8FuntionalAndLamda;
 
-import java.util.function.Consumer;
-import java.util.function.IntConsumer;
+import java.util.Locale;
 
-public class Foo {
-    public static void main(String[] args) {
-        Foo foo = new Foo();
-        foo.run();
+public interface Foo {
+    void printName();
+//    void printNameUpperCase(); // 상속받은 모든 곳에서 컴파일 에러 발생
+    //문서화를 잘해야 한다. return null 이면 runtime exception이 나옴
+    //@implSpec 이 구현체는 getName()으로 가져온 문자열을 대문자로 바꿔 출력한다.
+    default void printNameUpperCase(){
+        System.out.println(getName().toUpperCase(Locale.ROOT));
     }
+//    default void toString()// 오브젝트의 기본 메서드 재정의 불가
+    String toString();//추상 메서드로 선언하는건 가능
+// 사용하는 라이브러리에 재정의하는 것은 불가능하다
+    //bar라는 implements에도printName()이 있다면 defaultfoo가 양쪽 다 컴파일 에러충돌하는 경우 직접 오버라이드 해야함
+    //static 매소드
+    // foreach()/
 
-    private void run() {
-//        final int baseNumber = 10;
-        int baseNumber = 10;
-        //로컬클래스
-        class LocalClass{
-            void printNumber(){
-//                baseNumber++;// 에러남 - final로 선언한 변수를 수정하려고 하니깐
-                System.out.println(baseNumber);
-            }
-        }
-        //익명클래스
-        Consumer<Integer> integerConsumer = new Consumer<Integer>() {
-            @Override
-            public void accept(Integer integer) {
-//                baseNumber++;// 에러남
-                System.out.println(baseNumber);
-            }
-        };
-
-
-        IntConsumer printInt =value -> {
-            // 람다식에 사용한 변수는 final 혹은 effective final 이라함
-//            baseNumber++;
-            System.out.println(value + baseNumber);
-        };
-        printInt.accept(5);
+    String getName();
+    static void printAnything(){
+        System.out.println("Foo");
     }
 }
