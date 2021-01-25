@@ -16,6 +16,7 @@ public class Foo2 {
         class LocalClass{
             void printNumber(){
 //                baseNumber++;// 에러남 - final로 선언한 변수를 수정하려고 하니깐
+                int baseNumber = 5;
                 System.out.println(baseNumber);
             }
         }
@@ -24,6 +25,7 @@ public class Foo2 {
             @Override
             public void accept(Integer integer) {
 //                baseNumber++;// 에러남
+                int baseNumber = 5;
                 System.out.println(baseNumber);
             }
         };
@@ -31,7 +33,7 @@ public class Foo2 {
 
         IntConsumer printInt =value -> {
             // 람다식에 사용한 변수는 final 혹은 effective final 이라함
-//            baseNumber++;
+
             System.out.println(value + baseNumber);
         };
         printInt.accept(5);
