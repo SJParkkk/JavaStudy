@@ -25,14 +25,14 @@ public class CardDeck {
         }
     return cards;
     }
-
     public Card draw(){
         return cards.pop();
     }
     private Card getRandomCard(){
         // 이 클래스에서만 활용되는 함수 입니다. -> private
         int size = cards.size();
-        int select = (int)(Math.random()*size);
+        // 난수는 0.xxx 형으로 출력 +1 해줘야 원하는 정수 값이 출력됨
+        int select = (int)(Math.random()*size) + 1;
         return cards.get(select);
     }
 

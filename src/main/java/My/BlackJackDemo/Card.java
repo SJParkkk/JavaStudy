@@ -1,5 +1,4 @@
 package My.BlackJackDemo;
-//todo 랜덤하게 카드 13장 만드는 방법
 
 public class Card {
     private Pattern pattern;
@@ -62,7 +61,5 @@ public class Card {
                 ", denomination=" + denomination +
                 '}';
     }
-
-
 
 }
