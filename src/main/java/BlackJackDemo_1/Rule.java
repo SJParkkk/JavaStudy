@@ -13,7 +13,6 @@ public class Rule {
     }
 
     public Player getWinner(List<Player> players){
-        // highest player를 바꿔가면서 re
         Player highestPlayer = null;
         int highestPointSum = 0;
         for (Player player : players) {
@@ -24,9 +23,6 @@ public class Rule {
             }
         }
         return highestPlayer;
-
-
-
     }
     private int getPointSum(List<Card> cards){
         int sum = 0;

@@ -2,7 +2,7 @@ package My.BlackJackDemo;
 
 import java.util.ArrayList;
 import java.util.List;
-// todo 카드를 13장 만드는 것과
+// 카드 뭉치 52장 생성 클래스
 //Q 왜 generateCard에서 cardList에 new ArrayList<>(); 안해주면 nullpointException
 // 만들어진 카드를 2장 랜덤하게 뽑는 것
 

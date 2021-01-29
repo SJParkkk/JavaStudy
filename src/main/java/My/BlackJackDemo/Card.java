@@ -43,7 +43,12 @@ public class Card {
             this.mark = mark;
             this.point = point;
         }
+
+        public int getPoint() {
+            return point;
+        }
     }
+
 
     public Pattern getPattern() {
         return pattern;
