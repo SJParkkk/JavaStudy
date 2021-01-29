@@ -11,6 +11,10 @@ import java.util.Scanner;
  * 4.*카드를 더 뽑을지말지 입력받아서 하는건 나중에 구현
  *  - 규칙에 보면 딜러는 한명 게이머는 여러명일 수 있다고 함
  *  playingPhase()구현 ok
+ *  Player 인터페이스에 boolean turn; 변수 선언 후 setTurn 메소드를 활용해서 flag로 사용
+ *  isReceivedCard()
+ *  isAllPlayerTurnoff()
+ *
  *  */
 public class Game {
     private final static int INIT_RECEIVE_CARD = 2;
