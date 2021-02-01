@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class HashMapTutorial {
     public static void main(String[] args) {
         HashMap map = new HashMap();
-        map.put(1,5);
+           map.put(1,5);
         map.put(2,3);
         map.put(3,3);
         map.put(4,1);
