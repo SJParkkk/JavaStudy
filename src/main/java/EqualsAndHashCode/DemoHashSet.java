@@ -11,6 +11,7 @@ import java.util.Objects;
  * **/
 public class DemoHashSet {
     public static void main(String[] args) {
+        System.out.println("test");
         HashSet set = new HashSet();
         set.add("abc");
         set.add("abc");

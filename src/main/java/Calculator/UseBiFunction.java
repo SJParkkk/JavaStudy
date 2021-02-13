@@ -7,14 +7,12 @@ import java.util.function.BiFunction;
  * 메소드를 모를 땐 기존 처럼 new interface()를 한 후, 리턴 타입을 정해주는게 좀 더 이해가 쉬웠다.
  * **/
 public class UseBiFunction{
-
     public static void main(String[] args) {
         System.out.println("test");
         Cla calculator = new Cla();
         calculator.add.myMethod(2,3);
         calculator.multi.apply(3,5);
     }
-
 }
 class Cla{
     DemoFunctional add = new DemoFunctional() {
