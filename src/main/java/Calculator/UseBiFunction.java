@@ -9,6 +9,7 @@ import java.util.function.BiFunction;
 public class UseBiFunction{
 
     public static void main(String[] args) {
+        System.out.println("test");
         Cla calculator = new Cla();
         calculator.add.myMethod(2,3);
         calculator.multi.apply(3,5);
