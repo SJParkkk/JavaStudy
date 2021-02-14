@@ -7,7 +7,6 @@ public class WeirdWord {
     public static String solution(String s){
         List<String> arr;
         arr = Arrays.asList(s.split(""));
-        System.out.println(arr);
         String answer = "";
         int flag = 0;
         for (String e : arr) {
