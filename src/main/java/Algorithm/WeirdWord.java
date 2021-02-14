@@ -2,7 +2,6 @@ package Algorithm;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 public class WeirdWord {
     public static String solution(String s){
@@ -18,10 +17,10 @@ public class WeirdWord {
                 continue;
             }
             else if(flag % 2 == 0){
-                answer += e.toUpperCase(Locale.ROOT);
+                answer += e.toUpperCase();
             }
             else
-                answer += e.toLowerCase(Locale.ROOT);
+                answer += e.toLowerCase();
             flag++;
         }
         return answer;
