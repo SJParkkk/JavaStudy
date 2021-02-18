@@ -1,7 +1,5 @@
 package Java8FuntionalAndLamda;
 
-import java.util.Locale;
-
 public class DefaultFoo implements Foo{
     String name;
 
