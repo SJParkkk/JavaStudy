@@ -16,10 +16,9 @@ public class DemoBufferInPut {
     public static void main(String[] args) throws FileNotFoundException {
         String path = "/Users/sjpark/IdeaProjects/JavaStudy/123.txt";
         try{
-            FileOutputStream file = new FileOutputStream(path);
+            FileOutputStream file = new FileOutputStream(path);// 출력은 FileOutputStream이 구현
             BufferedOutputStream bos = new BufferedOutputStream(file,2);
             for (int i = '1'; i <= '9'; i++) {
-                System.out.println(i);
                 bos.write(i);
             }
             file.close();
