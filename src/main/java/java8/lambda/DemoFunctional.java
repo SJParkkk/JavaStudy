@@ -1,6 +1,7 @@
 package java8.lambda;
 
 import java.util.function.BiFunction;
+import java.util.function.Function;
 
 interface testInterface1{
     boolean accept();
@@ -17,21 +18,33 @@ interface Cal2{
     int cal(final int y);
 }
 interface Cal3{
-    int cal();
+    int cal(int a, int b);
 }
 
 public class DemoFunctional {
     public static void main(String[] args) {
 //        Cal3 mixVal = (int x, y) -> x + y; // 에러
+
+        Function<Integer,Integer> test = (a)-> a+1;
+        Integer answer = test.apply(5);
+        System.out.println(answer);
+
+//        BiFunction<Integer,Integer,Integer>
+        Cal3 ttt = new Cal3() {
+            @Override
+            public int cal(int a, int b) {
+                return a+b;
+            }
+        };
         Cal2 running = (final int y) -> y + 1;
         int x = 2;
         int y = 3;
-        Calculator test = (x1, x2) -> x1 + x2;
-        System.out.println(test.cal(x, y));
-
-        BiFunction<Integer, Integer, Integer> tt = (a, b)-> a+b;
-        int answer = tt.apply(x,y);
-        System.out.println(answer);
+//        Calculator test = (x1, x2) -> x1 + x2;
+//        System.out.println(test.cal(x, y));
+//
+//        BiFunction<Integer, Integer, Integer> tt = (a, b)-> a+b;
+//        int answer = tt.apply(x,y);
+//        System.out.println(answer);
 
 
         testInterface1 test1 = new testInterface1() {
