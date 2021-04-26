@@ -30,7 +30,7 @@ public class PC {
         }
 
         flag[n] = 1;
-        powerSet(answer_list,list1, flag, n+1);
+        powerSet(answer_list,list1, flag, ++n);
 
         flag[n] = 0;
         powerSet(answer_list,list1,flag, n+1);
